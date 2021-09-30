@@ -23,7 +23,7 @@ namespace DH_CezarCode
                         }
                         else
                         {
-                        builder += alphabet[i + drift];
+                            builder += alphabet[i + drift];
 
                         }
                     }
@@ -33,6 +33,8 @@ namespace DH_CezarCode
             return ciper_out;
         }
 
+
+        // Funkcja Deszyfrująca
         public static string deciper(string deciper_input, int drift)
         {
             string deciper_out = string.Empty;
@@ -43,9 +45,9 @@ namespace DH_CezarCode
                 {
                     if (alphabet[i] == xchar)
                     {
-                        if (alphabet.Length > (i - drift))
+                        if (0 > (i - drift))
                         {
-                            int reszta = alphabet.Length - (i - drift);
+                            int reszta = alphabet.Length + (i - drift);
                             builder += alphabet[reszta];
                         }
                         else
